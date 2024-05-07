@@ -29,20 +29,14 @@ enhanced_red = np.where(red_circle > red_image, fully_red_image, black_image)
 
 center_x, center_y, radius = find_circle_border(enhanced_red)
 image = cv2.circle(enhanced_red, (center_x, center_y), radius, (0, 255, 0))
+image2 = cv2.circle(init_img, (center_x, center_y), radius, (0, 255, 0))
 
-"""circles = cv2.HoughCircles(enhanced_red, cv2.HOUGH_GRADIENT, 1, 20, param1=50, param2=30, minRadius=0, maxRadius=0)
-
-
-if circles is not None:
-    circles = np.round(circles[0, :]).astype("int")
-    for (x, y, r) in circles:
-        cv2.circle(enhanced_red, (x, y), r, (0, 255, 0), 2)
 
 gray = cv2.cvtColor(init_img, cv2.COLOR_BGR2GRAY)
 _, edges = cv2.threshold(gray, 180, 255, cv2.THRESH_BINARY)
-"""
 cv2.imshow('Red Dominant Areas', enhanced_red)
-
+cv2.imshow('original', image2)
+cv2.imshow('line', edges)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

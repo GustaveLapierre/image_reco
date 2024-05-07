@@ -13,5 +13,5 @@ def find_circle_border(image):
     if circles is not None:
         circles = np.uint16(np.around(circles))
         for i in circles[0, :]:
-            return (i[0], i[1], i[2])  # (center_x, center_y, radius)
+            return i[0], i[1], i[2]  # (center_x, center_y, radius)
     return None
