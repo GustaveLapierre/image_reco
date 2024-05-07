@@ -28,7 +28,7 @@ fully_red_image[:] = [0, 0, 200]
 enhanced_red = np.where(red_circle > red_image, fully_red_image, black_image)
 
 center_x, center_y, radius = find_circle_border(enhanced_red)
-#image = cv2.circle(enhanced_red, (center_x, center_y), radius, (0, 255, 0))
+image = cv2.circle(enhanced_red, (center_x, center_y), radius, (0, 255, 0))
 
 """circles = cv2.HoughCircles(enhanced_red, cv2.HOUGH_GRADIENT, 1, 20, param1=50, param2=30, minRadius=0, maxRadius=0)
 

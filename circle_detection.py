@@ -7,7 +7,7 @@ def find_circle_border(image):
     gray_blurred = cv2.GaussianBlur(gray, (9, 9), 2)
 
     circles = cv2.HoughCircles(gray_blurred,
-                               cv2.HOUGH_GRADIENT, 1, 20,
+                               cv2.HOUGH_GRADIENT, 1.5, 20,
                                param1=50, param2=30, minRadius=0, maxRadius=0)
 
     if circles is not None:
